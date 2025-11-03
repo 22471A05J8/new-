@@ -268,50 +268,53 @@ const Start = () => {
 
 
       {/* ===== Projects Section ===== */}
-      <section id="projects" className="section fade-in">
-        <h2 className="projects-title">Projects</h2>
-        <p className="projects-subtitle">
-          Take a look at some of my recent work and experiments.
-        </p>
+      <section id="myproj-section" className="myproj-section fade-in">
+  <h2 className="myproj-title">Projects</h2>
+  <p className="myproj-subtitle">
+    Take a look at some of my recent work and experiments.
+  </p>
 
-        <div className="projects-grid">
-          <div className="project-card project-card-1">
-            <img
-              src="https://img.freepik.com/premium-vector/online-education-e-learning-online-course-concept-home-school-illustration-students-laptop-computer-screen_7280-4687.jpg"
-              alt="Ignitia"
-            />
-            <div className="p-6">
-              <h3>Ignitia</h3>
-              <button
-                className="project-btn"
-                onClick={() =>
-                  window.open("https://your-portfolio-link.com", "_blank")
-                }
-              >
-                View Project
-              </button>
-            </div>
-          </div>
+  <div className="myproj-grid">
+    <div className="myproj-card">
+      <img
+        src="https://img.freepik.com/premium-vector/online-education-e-learning-online-course-concept-home-school-illustration-students-laptop-computer-screen_7280-4687.jpg"
+        alt="Ignitia"
+        className="myproj-image"
+      />
+      <div className="myproj-content">
+        <h3 className="myproj-heading">Ignitia</h3>
+        <button
+          className="myproj-btn"
+          onClick={() =>
+            window.open("https://your-portfolio-link.com", "_blank")
+          }
+        >
+          View Project
+        </button>
+      </div>
+    </div>
 
-          <div className="project-card project-card-2">
-            <img
-              src="https://assets.designtemplate.io/images/Travel%20Agency%20Logo%20Animation-HD.webp"
-              alt="Travel Tales"
-            />
-            <div className="p-6">
-              <h3>Travel Tales</h3>
-              <button
-                className="project-btn"
-                onClick={() =>
-                  window.open("https://your-quizapp-link.com", "_blank")
-                }
-              >
-                View Project
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="myproj-card">
+      <img
+        src="https://assets.designtemplate.io/images/Travel%20Agency%20Logo%20Animation-HD.webp"
+        alt="Travel Tales"
+        className="myproj-image"
+      />
+      <div className="myproj-content">
+        <h3 className="myproj-heading">Travel Tales</h3>
+        <button
+          className="myproj-btn"
+          onClick={() =>
+            window.open("https://your-quizapp-link.com", "_blank")
+          }
+        >
+          View Project
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
