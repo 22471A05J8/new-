@@ -24,7 +24,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.55);
+  
   z-index: -2;
 }
 
@@ -51,7 +51,7 @@ body {
   z-index: 1000;
   border: none; /* remove border */
   transition: background 0.4s ease, backdrop-filter 0.4s ease;
- background: rgba(15, 15, 25, 0.4);
+
   backdrop-filter: blur(10px);
   border: 1px solid rgba(244, 245, 248, 0.953);
 }
@@ -268,7 +268,7 @@ body {
 .about-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #4064d1;
+  color: #f6f6f9;
   letter-spacing: 1px;
 }
 
@@ -332,7 +332,7 @@ body {
 .skills-title {
    font-size: 3rem;
   font-weight: 800;
-  color: #4064d1;
+  color: #f6f7fb;
   letter-spacing: 1px;
 }
 
@@ -436,7 +436,7 @@ body {
 .myproj-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #4064d1;
+  color: #f4f5f7;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -572,7 +572,7 @@ body {
 .section {
   text-align: center;
   padding: 60px 20px;
-  background: rgba(0, 0, 0, 0.6);
+
   position: relative;
   z-index: 1;
 }
@@ -580,7 +580,7 @@ body {
 .certificates-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #a78bfa;
+  color: #e6e5ea;
   letter-spacing: 1px;
   margin-bottom: 15px;
   animation: fadeIn 1s ease;
@@ -732,7 +732,7 @@ body {
 .contact-title {
 font-size: 3rem;
   font-weight: 800;
-  color: #4064d1;
+  color: #e7e8ea;
   letter-spacing: 1px;
 
 }
@@ -764,7 +764,7 @@ font-size: 3rem;
 
 .contact-icon:hover {
   transform: scale(1.2) rotate(10deg);
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
+  box-shadow: 0 0 25px rgba(163, 61, 112, 0.7);
 }
 
 /* Different Colors on Hover */
@@ -787,7 +787,7 @@ font-size: 3rem;
 /* Email Link */
 .email-link {
   display: inline-block;
-  color: #a78bfa;
+  color: #b5c61b;
   font-size: 1.1rem;
   text-decoration: none;
   border-bottom: 2px solid transparent;
@@ -795,7 +795,7 @@ font-size: 3rem;
 }
 
 .email-link:hover {
-  color: #ec4899;
+  color: #fcf8fa;
   border-bottom: 2px solid #ec4899;
   text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
 }
@@ -814,7 +814,7 @@ font-size: 3rem;
 
 @keyframes textGlow {
   from {
-    text-shadow: 0 0 10px #a78bfa, 0 0 20px #ec4899;
+    text-shadow: 0 0 10px #ebeaee, 0 0 20px #ec4899;
   }
   to {
     text-shadow: 0 0 25px #a78bfa, 0 0 40px #ec4899;
@@ -941,6 +941,7 @@ font-size: 3rem;
   /* Contact section */
   .contact-title {
     font-size: 2.2rem;
+    color: #000;
   }
 
   .contact-subtitle {
