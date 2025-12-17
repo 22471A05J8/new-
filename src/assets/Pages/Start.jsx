@@ -40,6 +40,30 @@ const Start = () => {
     window.addEventListener("scroll", handleScrollActive);
     return () => window.removeEventListener("scroll", handleScrollActive);
   }, []);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+
+  try {
+    const response = await fetch("https://formspree.io/f/xovggprr", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully! 😊");
+      e.target.reset();
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    alert("Network error. Try again later.");
+  }
+};
 
   return (
     <>
@@ -265,55 +289,67 @@ const Start = () => {
 
 
 
-
-
-      {/* ===== Projects Section ===== */}
-      <section id="myproj-section" className="myproj-section fade-in">
-  <h2 className="myproj-title">Projects</h2>
-  <p className="myproj-subtitle">
-    Take a look at some of my recent work and experiments.
-  </p>
-
-  <div className="myproj-grid">
+<section id="projects" className="section projects-section fade-in">
+        <h2 className="projects-title">Projects</h2>
+<div className="myproj-wrapper">
+  <div className="myproj-item">
     <div className="myproj-card">
-      <img
-        src="https://img.freepik.com/premium-vector/online-education-e-learning-online-course-concept-home-school-illustration-students-laptop-computer-screen_7280-4687.jpg"
-        alt="Ignitia"
-        className="myproj-image"
-      />
-      <div className="myproj-content">
-        <h3 className="myproj-heading">Ignitia</h3>
-        <button
-          className="myproj-btn"
-          onClick={() =>
-            window.open("https://your-portfolio-link.com", "_blank")
-          }
-        >
-          View Project
-        </button>
-      </div>
+      <img src="https://inspgr.id/app/uploads/2019/12/photography-pavel-sablya-01.jpg" className="myproj-image" />
+      <h3 className="myproj-heading">Food Recipe</h3>
     </div>
-
-    <div className="myproj-card">
-      <img
-        src="https://assets.designtemplate.io/images/Travel%20Agency%20Logo%20Animation-HD.webp"
-        alt="Travel Tales"
-        className="myproj-image"
-      />
-      <div className="myproj-content">
-        <h3 className="myproj-heading">Travel Tales</h3>
-        <button
-          className="myproj-btn"
-          onClick={() =>
-            window.open("https://your-quizapp-link.com", "_blank")
-          }
-        >
-          View Project
-        </button>
-      </div>
+<div className="myproj-detail">
+      <p>A simple food recipe app where you can search dishes and view their ingredients and cooking steps. 🍽️</p>
+     <div className="myproj-btn-group">
+        
+  <a href="https://22471a05j8.github.io/food-recipe-/" target="_blank" rel="noopener noreferrer" className="myproj-btn" >
+    View
+    </a></div>
     </div>
   </div>
+
+
+
+  <div className="myproj-item">
+    <div className="myproj-card">
+      <img src="https://d2uqfpnktc64mn.cloudfront.net/uploads/ckeditor_assets/pictures/22709/content_c2-Image-by-Craig-Boehm-Little-Church-on-the-Prairie-Shortlisted-for-Weather-Photographer-of-the-Year-2017.jpg" className="myproj-image" />
+      <h3 className="myproj-heading">Weather Forecasting</h3>
+    </div>
+<div className="myproj-detail">
+      <p>A simple weather app that lets you search by city and view current temperature, weather conditions, and a 5-day forecast, with options for °C/°F and light/dark mode. 🌦️</p>
+      <div className="myproj-btn-group">
+        <a href="https://22471a05j8.github.io/weather/" target="_blank" rel="noopener noreferrer" className="myproj-btn" >
+    View
+    </a></div>
+     </div>
+  </div>
+
+
+
+  <div className="myproj-item">
+    <div className="myproj-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2y7S19MsopqsizZ4lhdH6qkZVTvxxMv1hPQ&s" className="myproj-image" />
+      <h3 className="myproj-heading">Travel Tales</h3>
+    </div>
+<div className="myproj-detail">
+      <p>Travel Tales is a travel planning web application that helps users explore destinations, save trips, and organize travel ideas with an intuitive and user-friendly interface.</p>
+     
+       <div className="myproj-btn-group">
+  <a href="https://22471a05j8.github.io/travel-tales/" target="_blank" rel="noopener noreferrer" className="myproj-btn" >
+    View
+    </a>
+<a href="https://docs.google.com/presentation/d/1C1JVijtsBNb1UG_29RnhV3dMLF9-8xKS/edit" target="_blank" rel="noopener noreferrer" className="myproj-btn outline">
+    PPT
+  </a>
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
 </section>
+
+
 
 
 
@@ -335,9 +371,9 @@ const Start = () => {
 
       {/* ===== Certificates Section ===== */}
       <section id="certificates" className="section fade-in">
-        <h2 className="certificates-title">Certificates</h2>
+        <h2 className="certificates-title">Internships</h2>
         <p className="certificates-subtitle">
-          Here are my achievements and certifications.
+          Here are my internship certifications.
         </p>
 
         <div className="certificates-buttons">
@@ -401,6 +437,31 @@ const Start = () => {
         <p className="contact-subtitle">
           Feel free to reach out for collaborations or just to say hi 👋
         </p>
+        <form className="contact-form" onSubmit={handleSubmit}>
+  <h2>Let’s Connect</h2>
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+  />
+
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    required
+  />
+
+  <button type="submit">Send Message</button>
+</form>
 
         <div className="contact-icons">
           <a
@@ -438,6 +499,10 @@ const Start = () => {
         <a href="mailto:harinisunkara2005@gmail.com" className="email-link">
           harinisunkara2005@gmail.com
         </a>
+
+
+
+        
       </section>
     </>
   );

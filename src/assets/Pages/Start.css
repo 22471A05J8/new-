@@ -316,6 +316,17 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* === Skills Section === */
 .skills-section {
   display: flex;
@@ -427,134 +438,424 @@ body {
 
 
 
-/* 🌟 Projects Section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .contact-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f92a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #253e57;
+    color: #fefdfd;
+  }
+
+  .contact-form textarea {
+    resize: none;
+      background: #253e57;
+    height: 100px;
+     color: #fefdfd;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: #f3f4f5;
+    color: #070707;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .contact-form button:hover {
+    background: #0056b3;
+  }
+
+
+/* ============================
+   🌟 PROJECTS SECTION
+============================ */
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* smaller vertical gap between rows */
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.projects-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f6f7fb;
+  letter-spacing: 1px;
+}
 #myproj-section {
   padding: 80px 20px;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
 
+/* Title */
 .myproj-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #f4f5f7;
-  letter-spacing: 1px;
-  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .myproj-subtitle {
-  text-align: center;
-  color: #d1d5db;
-  margin-bottom: 40px;
   font-size: 1.1rem;
+  color: #d1d5db;
+  margin-bottom: 50px;
 }
 
-/* 🔷 Grid Layout */
-.myproj-grid {
+/* ============================
+   🔷 GRID LAYOUT
+============================ */
+
+.myproj-wrapper {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1rem;
-  animation: myproj-fadeInUp 1s ease forwards;
 }
 
-/* ✨ Project Cards */
+/* ============================
+   🧱 PROJECT ITEM
+============================ */
+
+.myproj-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ============================
+   🟦 TOP CARD
+============================ */
+
 .myproj-card {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(8px);
-  transform: scale(1);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .myproj-card:hover {
-  transform: scale(1.05) rotate(1deg);
-  box-shadow: 0 6px 30px rgba(167, 139, 250, 0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* 🖼️ Image styling */
+/* ============================
+   🔵 CIRCULAR IMAGE
+============================ */
+
 .myproj-image {
-  width: 100%;
-  height: 230px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   object-fit: cover;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto 1rem;
+  border: 4px solid #060606;
   transition: transform 0.5s ease;
 }
 
+/* Pulse effect */
 .myproj-card:hover .myproj-image {
-  transform: scale(1.05);
+  animation: myproj-imagePulse 1.5s ease infinite;
 }
 
-/* 📜 Content inside cards */
-.myproj-content {
-  padding: 1.5rem;
-  animation: myproj-fadeInUp 0.8s ease;
+@keyframes myproj-imagePulse {
+  0% { box-shadow: 0 0 0 0 rgba(26, 25, 27, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(167, 139, 250, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(167, 139, 250, 0); }
 }
 
-.myproj-heading {
-  color: #fff;
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+/* Card title */
+.myproj-card-title,
+.myproj-card h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
   font-weight: 600;
-  transition: color 0.3s ease;
 }
 
-.myproj-heading:hover {
-  color: #a78bfa;
+/* ============================
+   📦 DETAIL CARD
+============================ */
+
+.myproj-detail {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+
+  /* hidden state */
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* 🎯 Buttons */
-.myproj-btn {
-  display: inline-block;
-  padding: 10px 22px;
+/* Reveal on hover */
+.myproj-item:hover .myproj-detail {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Detail text */
+.myproj-detail p {
+  color: #d1d5db;
   font-size: 0.95rem;
-  border: none;
+  line-height: 1.5;
+}
+
+/* ============================
+   🎯 BUTTONS
+============================ */
+
+.myproj-btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Button reveal with card */
+.myproj-item:hover .myproj-btn-group {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.myproj-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 9px 22px;
   border-radius: 30px;
-  color: #fff;
+  border: none;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: linear-gradient(90deg, #7c3aed, #6d28d9);
-  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  color: #080808;
+  font-style: italic;
+  background: linear-gradient(90deg, #e3e2e6, #f2f1f2);
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Shine animation */
+.myproj-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.myproj-btn:hover::after {
+  left: 100%;
 }
 
 .myproj-btn:hover {
-  background: linear-gradient(90deg, #6d28d9, #7c3aed);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.45);
+  background: linear-gradient(90deg, #0c0c0c, #040404);
+  color: #ffffff;
 }
 
-/* 🌈 Animation */
-@keyframes myproj-fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.myproj-btn:active {
+  transform: translateY(1px) scale(0.97);
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  #myproj-section {
-    padding: 60px 10px;
+/* Outline button */
+.myproj-btn.outline {
+  background: transparent;
+  border: 2px solid #7c3aed;
+  color: #7c3aed;
+}
+
+.myproj-btn.outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #7c3aed;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+  z-index: -1;
+}
+
+.myproj-btn.outline:hover::before {
+  transform: scaleX(1);
+}
+
+.myproj-btn.outline:hover {
+  color: #ffffff;
+}
+
+/* ============================
+   ✨ WRAPPER HOVER FOCUS
+============================ */
+
+.myproj-wrapper:hover .myproj-item {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.myproj-wrapper:hover .myproj-item:hover {
+  opacity: 1;
+}
+
+/* ============================
+   📱 RESPONSIVE
+============================ */
+
+@media (max-width: 900px) {
+  .myproj-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .myproj-title {
-    font-size: 2rem;
+  .myproj-card {
+    padding: 1.8rem 1.2rem;
   }
 
   .myproj-image {
-    height: 200px;
+    width: 120px;
+    height: 120px;
   }
-
 }
+
+/* ============================
+   🍽️ PROJECT TITLE – FOOD RECIPE
+============================ */
+
+.myproj-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  letter-spacing: 0.8px;
+  margin-top: 0.5rem;
+
+  background: linear-gradient(
+    90deg,
+    #fefdff,
+    #f7f6f8,
+    #f7f6f8
+  );
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition:
+    transform 0.4s ease,
+    letter-spacing 0.4s ease,
+    background-position 0.6s ease;
+}
+
+/* Hover animation */
+.myproj-card:hover .myproj-heading {
+  transform: translateY(-4px) scale(1.05);
+  letter-spacing: 2px;
+  background-position: right center;
+}
+
+/* Subtle glow */
+.myproj-heading::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 8px auto 0;
+  background: linear-gradient(90deg, #faf9fb, #a78bfa);
+  border-radius: 4px;
+  opacity: 0.8;
+  transition: width 0.4s ease;
+}
+
+/* Expand underline on hover */
+.myproj-card:hover .myproj-heading::after {
+  width: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
