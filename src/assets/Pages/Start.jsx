@@ -437,28 +437,13 @@ const handleSubmit = async (e) => {
         <p className="contact-subtitle">
           Feel free to reach out for collaborations or just to say hi 👋
         </p>
-        <form className="contact-form" onSubmit={handleSubmit}>
+        
+<form className="contact-form" onSubmit={handleSubmit}>
   <h2>Let’s Connect</h2>
 
-  <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    required
-  />
-
-  <input
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    required
-  />
-
-  <textarea
-    name="message"
-    placeholder="Your Message"
-    required
-  />
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required />
 
   <button type="submit">Send Message</button>
 </form>

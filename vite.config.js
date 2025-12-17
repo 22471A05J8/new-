@@ -8,3 +8,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/new-/', // 👈 Important: use your repository name here
 })
+
+
+
